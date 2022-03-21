@@ -1,0 +1,24 @@
+version: "3.4"
+
+services:
+  project:
+    ports:
+      - 2000:2000
+    build:
+      context: ./project
+      dockerfile: ./Dockerfile
+    restart: unless-stopped
+    networks:
+      - client-backend-tier
+    volumes:
+      - ./project/public/:/app/public
+    command: npm run start
+
+
+volumes:
+  client-db:
+    driver: local
+
+networks:
+  client-backend-tier:
+    driver: bridge

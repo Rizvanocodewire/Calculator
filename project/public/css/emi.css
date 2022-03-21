@@ -1,0 +1,65 @@
+body {
+  background-color: black;
+}
+.container {
+  left: 19%;
+  margin-top: 10px;
+  /* height: 460px; */
+  width: 400px;
+  background-color: rgb(72, 73, 126);
+
+  border-radius: 10px;
+  font-family: Arial;
+}
+
+#header-1 {
+  text-align: center;
+  justify-content: center;
+  color: #fff;
+}
+.form-control {
+  background-color: #fff;
+  color: black;
+}
+.loan {
+  /* color: orangered; */
+  font-size: 20px;
+}
+
+.btn {
+  justify-content: center;
+  text-align: center;
+  /* color: white; */
+  /* background-color: blue; */
+  font-size: 20px;
+  border-radius: 10px;
+}
+.Interest {
+  font-size: 20px;
+}
+
+.Interest input type {
+  background-color: #fff;
+
+  color: rgb(255, 0, 149);
+  font-size: 20px;
+  background-clip: padding-box;
+}
+
+.year {
+  /* color: rgb(0, 26, 255); */
+  font-size: 20px;
+  background-color: #fff;
+}
+.total {
+  /* color: rgb(255, 0, 76); */
+  font-size: 20px;
+}
+
+#design {
+  height: 50px;
+  border: 2px solid blue;
+  width: 100px;
+  right: 0px;
+  background-color: red;
+}

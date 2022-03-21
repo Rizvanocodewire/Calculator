@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/new.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+
+    <title>calculator</title>
+    <link rel="icon" type="png" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVVFDAwnmdkosOdTnXs2AbJ9NZElMx-TrgfQ&usqp=CAU" height="20pxpx" width="30px">
+  
+  </head>
+  <body>
+    
+    <div class="container">
+   
+      <div class="row mb-5">
+        <div class="menu col-sm-3">
+          <div class="container">
+            <div class="text">
+              <ul>
+                <li><a href="/sip">SIP Calculator</a></li>
+                <li><a href="/lump">Lump Sum </a></li>
+                <li><a href="/mutual">Mutual Fund </a></li>
+                <li><a href="/ppf"> PPF Calculator</a></li>
+      
+                <li><a href="/fd">FD Calculator</a></li>
+                <li><a href="/rd">RD Calculator</a></li>
+
+                <li><a href="/emi">EMI Calculator</a></li>
+                <li><a href="/nps">NPS Calculator</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="form col-sm-3">
+      
+          <form action="/lump" method="post">
+            <label for="investment"> Loan Amount</label>
+            <input
+              type="number"
+              step="500"
+              placeholder="Enter Your Amount"
+              name="total_invesment"
+              value="<%= total_amount %>"
+              class="form-control"
+            /><br />
+            <label for="Interest">Interest</label>
+            <input
+              type="number"
+              step="1"
+              name="return_rate"
+              id="interest"
+              value="<%= return_rate %>"
+              placeholder="Enter  Interest"
+              class="form-control"
+            /><br />
+            <label for="return">Year</label>
+            <input
+              type="number"
+              step="1"
+              id="amount"
+              placeholder="Year"
+              name="year"
+              value="<%= year %>"
+              class="form-control"
+            /><br />
+            
+
+            <button type="submit" id="btn" class="btn btn-primary col-6">
+              Calculate
+            </button><br/><br/>
+            <label for="return">Total Value</label>
+            <input
+              type="text"
+              id="total"
+              value="<%= total_value %>"
+              name="year"
+              class="form-control"
+              readonly
+            /><br />
+            <label for="return">totalWealthGain</label>
+            <input
+              type="text"
+              id="wealth"
+              value="<%= totalWealthGain %>"
+              name="year"
+              class="form-control"
+              readonly
+            /><br />
+          </form>
+        </div>
+        <div class="chart col-sm-4">
+          <h1 id="heading">Lump Sum Calculator</h1>
+          <div id="myPlot" style="width: 600px; max-width: 700px"></div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      let result = document.getElementById("total").value;
+      let amount1 = document.getElementById("wealth").value;
+
+      if (result === "") {
+        var xArray = ["total_value", "totalWealthGain"];
+        var yArray = [1, 1];
+      } else {
+        var xArray = ["total_value", "totalWealthGain"];
+        var yArray = [result, amount1];
+      }
+
+      // var layout = { title: "World Wide Wine Production" };
+
+      var data = [{ labels: xArray, values: yArray, type: "pie" }];
+
+      Plotly.newPlot("myPlot", data);
+    </script>
+
+    <!-- <script>
+      var slider = document.getElementById("amount2");
+      var output = document.getElementById("demo");
+      output.innerHTML = slider.value;
+
+      slider.oninput = function () {
+        output.innerHTML = this.value;
+      };
+    </script> -->
+  </body>
+</html>

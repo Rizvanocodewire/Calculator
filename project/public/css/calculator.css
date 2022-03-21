@@ -1,0 +1,61 @@
+.menu {
+  /* margin-top: 10px; */
+  margin-bottom: 0px;
+  height: 100%;
+  width: 300px;
+
+  background-color: rgb(33, 68, 224);
+  left: 0px;
+  position: fixed;
+  overflow-y: scroll;
+}
+.heading {
+  text-align: center;
+  justify-content: center;
+}
+.menu h1 {
+  color: white;
+  font-size: 20px;
+  font-family: sans-serif;
+
+  padding: 10px;
+  text-align: center;
+}
+h1:hover {
+  color: rgb(239, 250, 250);
+}
+uldesign {
+  list-style: none;
+}
+ul {
+  list-style: none;
+  margin: 10px;
+  padding: 10px;
+}
+ul li {
+  font-size: 20px;
+  /* font-family: verdana; */
+  color: white;
+  margin: 10px;
+  padding: 10px;
+}
+ul li a {
+  list-style: none;
+  color: white;
+  margin: 10px;
+  padding: 10px;
+  text-decoration: none;
+}
+ul li a:hover {
+  color: violet;
+}
+.content_area {
+  margin-left: 15%;
+  border: 2px solid gray;
+  background-color: rgb(241, 232, 232);
+  color: white;
+}
+#chartContainer {
+  float: right;
+  right: 0px;
+}
